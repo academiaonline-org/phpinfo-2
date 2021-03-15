@@ -49,6 +49,7 @@ jobs:
         while true 
           do \
             sleep 10
+            # [0-9] limita a 9 replicas si quisieramos mas deberiamos incluir en la expresion regular [0-9]+
             docker service ls | grep "${project}.*\([0-9]\)/\1" && break
           done
         while true
